@@ -1,0 +1,43 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>Pie chart of survey results</title>  
+    <style>  
+        #chart {  
+            width: 400px;  
+            height: 400px;  
+        }  
+    </style>  
+</head>  
+<body> 
+    <p>Survey Results: 10% of respondents prefer to shop online because it saves time and effort.
+
+        Note: This result may indicate that with the development of technology and the acceleration of people's lifestyle, more and more people are choosing to shop online to save time and energy.
+        Survey Results: 10% of respondents use social media on a daily basis, mainly for recreation and entertainment.
+        
+        Note: This result reveals the popularity of social media in modern life and its important role as a pastime and entertainment tool.
+        Survey Results: 20% of respondents prefer email as their primary communication channel
+        
+        Note: This result indicates the importance of email as the primary communication channel and may hint at the potential of the email industry.
+        Survey Results: 10% of respondents said they prefer to buy books in physical bookstores because they can feel more cultural.
+        
+        Note: This result highlights the cultural value and unique experience of brick-and-mortar bookstores, and may shed some light on the survival and development of brick-and-mortar bookstores.
+        Survey Results: 50% of respondents said they would generally choose products with high brand awareness.</p> 
+    <canvas id="chart"></canvas>  
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>  
+    <script>  
+        window.onload = function() {  
+            const data = {  
+                labels: ['Shop online', 'Social media', 'email', 'Physical bookstores', 'Brand awareness'],  
+                datasets: [{  
+                    data: [10, 10, 20, 10, 50],  
+                    backgroundColor: ['#FF0000', '#20B2AA', '#00FF00', '#FFFF00', '#FF00FF'],  
+                }]  
+            };  
+            const options = {responsive: true};  
+            const ctx = document.getElementById('chart').getContext('2d');  
+            new Chart(ctx, {type: 'pie', data, options});  
+        };  
+    </script>  
+</body>  
+</html>
